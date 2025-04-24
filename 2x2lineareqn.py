@@ -1,6 +1,7 @@
 # this is supposted to be a python code to solove the 2 set linear equation 
-# side project
+# main project
 import sys
+
 def take_input():
     print('\nEnter the coefficients for the system:')
     print('  a1*x + b1*y = c1')
@@ -73,8 +74,6 @@ def take_input():
 
         return fa1, fb1, fd1, fa2, fb2, fd2
 
-a1, b1, d1, a2, b2, d2 = take_input()
-
 def check_if_solvable(ca1, cb1, cd1, ca2, cb2, cd2):
     if ca1 == 0 or cb1 == 0 or cd1 == 0 or ca2 == 0 or cb2 == 0 or cd2 == 0:
         print('One or more coefficients are zero, which makes the system unsolvable.')
@@ -82,6 +81,8 @@ def check_if_solvable(ca1, cb1, cd1, ca2, cb2, cd2):
     diva = ca1 / ca2
     divb = cb1 / cb2
     divd = cd1 / cd2
+    # if a1 / a2 = b1 / b2 then slopes are equal, that means lines are parallel.
+    # if a1 / a2 = b1 / b2 = d1 / d2 then slopes and y intrecepts are equal, that means lines are stacked over.
     if diva == divb:
         if divd == divb:
             print('The two lines are coincident: there are an unlimited number of solutions.')
@@ -94,19 +95,17 @@ def check_if_solvable(ca1, cb1, cd1, ca2, cb2, cd2):
 
 def solve(sa1, sb1, sd1, sa2, sb2, sd2):
     # sa1X + sb1Y = Sd1
-    # sa2X + sb2Y = sd2
-    '''
-    right now, the equations already in anX + bnX = D form because of user input
-    to solve using elimination, you need a or b, to be additive inverse to a or b in the other equation
-    in the case of 2x - y = 5, x + 3y = -1
-    a1 = 2, b1 = 1, a2 = 1, b2 = 3
-    
-    '''
-    return
+    # sa2X + sb2Y = sd2 (those change later)
+    mulnum = -1 * sa1 / sa2
+    sa2, sb2, sd2 = mulnum * sa2, mulnum * sb2, mulnum * sd2
+    nb, nd = sb2 + sb1, sd2 + sd1
+    y = nd / nb
+    xma = (-1 * sb1 * y) + sd1
+    x = xma / sa1
+    return x, y
+# done
 
-
-
-
+a1, b1, d1, a2, b2, d2 = take_input()
 
 
 
