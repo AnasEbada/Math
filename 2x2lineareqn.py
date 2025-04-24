@@ -121,7 +121,7 @@ def mainscript():
         print(f'\n x  =  {x}\n y = {y}')
 
 mainscript()
-while true:
+while True:
     continueornot = input('Another Equation (yes / no)? ')
     if continueornot == "yes".lower():
         print('\n'+'-'*20+'\n')
