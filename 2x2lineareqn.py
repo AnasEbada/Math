@@ -1,5 +1,5 @@
 # this is supposted to be a python code to solove the 2 set linear equation 
-# side project
+# main project
 import sys
 
 def take_input():
@@ -81,6 +81,8 @@ def check_if_solvable(ca1, cb1, cd1, ca2, cb2, cd2):
     diva = ca1 / ca2
     divb = cb1 / cb2
     divd = cd1 / cd2
+    # if a1 / a2 = b1 / b2 then slopes are equal, that means lines are parallel.
+    # if a1 / a2 = b1 / b2 = d1 / d2 then slopes and y intrecepts are equal, that means lines are stacked over.
     if diva == divb:
         if divd == divb:
             print('The two lines are coincident: there are an unlimited number of solutions.')
@@ -93,18 +95,15 @@ def check_if_solvable(ca1, cb1, cd1, ca2, cb2, cd2):
 
 def solve(sa1, sb1, sd1, sa2, sb2, sd2):
     # sa1X + sb1Y = Sd1
-    # sa2X + sb2Y = sd2
-    mulnum = None
-    if sa1 > sa2: 
-        mulnum = -1 * sa1 / sa2
-        sa2, sb2, sd2 = mulnum * sa2, mulnum * sb2, mulnum * sd2
-    if sa1 < sa2:
-        mulnum = -1 * sa2 / sa1
-        sa1, sb1, sd1 = mulnum * sa1, mulnum * sb1, mulnum * sd1
-    
-    return
-
-
+    # sa2X + sb2Y = sd2 (those change later)
+    mulnum = -1 * sa1 / sa2
+    sa2, sb2, sd2 = mulnum * sa2, mulnum * sb2, mulnum * sd2
+    nb, nd = sb2 + sb1, sd2 + sd1
+    y = nd / nb
+    xma = (-1 * sb1 * y) + sd1
+    x = xma / sa1
+    return x, y
+# done
 
 a1, b1, d1, a2, b2, d2 = take_input()
 
