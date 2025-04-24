@@ -121,13 +121,14 @@ def mainscript():
         print(f'\n x  =  {x}\n y = {y}')
 
 mainscript()
-
-continueornot = input('Another Equation (yes or no)? ')
-
-if continueornot == "yes".lower():
-    print('\n'+'-'*20+'\n')
-    mainscript()
-elif continueornot == "no".lower():
-    print("Exiting program.")
-    sys.exit()
+while true:
+    continueornot = input('Another Equation (yes / no)? ')
+    if continueornot == "yes".lower():
+        print('\n'+'-'*20+'\n')
+        mainscript()
+    elif continueornot == "no".lower():
+        print("Exiting program.")
+        sys.exit()
+    else:
+        print('Invalid Input: Please Enter "yes" Or "no"')
     
