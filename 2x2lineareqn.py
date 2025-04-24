@@ -95,6 +95,13 @@ def check_if_solvable(ca1, cb1, cd1, ca2, cb2, cd2):
 def solve(sa1, sb1, sd1, sa2, sb2, sd2):
     # sa1X + sb1Y = Sd1
     # sa2X + sb2Y = sd2
+    '''
+    right now, the equations already in anX + bnX = D form because of user input
+    to solve using elimination, you need a or b, to be additive inverse to a or b in the other equation
+    in the case of 2x - y = 5, x + 3y = -1
+    a1 = 2, b1 = 1, a2 = 1, b2 = 3
+    
+    '''
     return
 
 
