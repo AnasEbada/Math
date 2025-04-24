@@ -123,8 +123,8 @@ def mainscript():
     
     if a1 != 0 or b1 != 0 or d1 != 0 or a2 != 0 or b2 != 0 or d2 != 0:
             print('\n System Entered: ')
-            print(f'   {int(a1)}X  {'-' if b1 <= -1 else '+'}  {abs(int(b1))}Y   =   {int(d1)}')
-            print(f'   {int(a2)}X  {'-' if b2 <= -1 else '+'}  {abs(int(b2))}Y   =   {int(d2)}')
+            print(f"   {int(a1)}X  {'-' if b1 <= -1 else '+'}  {abs(int(b1))}Y   =   {int(d1)}")
+            print(f"   {int(a2)}X  {'-' if b2 <= -1 else '+'}  {abs(int(b2))}Y   =   {int(d2)}")
 
     if check_if_solvable(a1, b1, d1, a2, b2, d2):
         x, y = solve(a1, b1, d1, a2, b2, d2)
