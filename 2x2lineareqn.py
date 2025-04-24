@@ -1,5 +1,3 @@
-# this is supposted to be a python code to solove the 2 set linear equation 
-# main project
 import sys
 
 def take_input():
@@ -105,9 +103,31 @@ def solve(sa1, sb1, sd1, sa2, sb2, sd2):
     return x, y
 # done
 
-a1, b1, d1, a2, b2, d2 = take_input()
 
+def mainscript():
+    print('=' * 20)
+    print('Linear Equation Solver')
+    print('=' * 20)
 
+    a1, b1, d1, a2, b2, d2 = take_input()
+    
+    if a1 != 0 or b1 != 0 or d1 != 0 or a2 != 0 or b2 != 0 or d2 != 0:
+            print('\n System Entered: ')
+            print(f'   {int(a1)}X  {'-' if b1 <= -1 else '+'}  {abs(int(b1))}Y   =   {int(d1)}')
+            print(f'   {int(a2)}X  {'-' if b2 <= -1 else '+'}  {abs(int(b2))}Y   =   {int(d2)}')
 
+    if check_if_solvable(a1, b1, d1, a2, b2, d2):
+        x, y = solve(a1, b1, d1, a2, b2, d2)
+        print(f'\n x  =  {x}\n y = {y}')
 
+mainscript()
 
+continueornot = input('Another Equation (yes or no)? ')
+
+if continueornot == "yes".lower():
+    print('\n'+'-'*20+'\n')
+    mainscript()
+elif continueornot == "no".lower():
+    print("Exiting program.")
+    sys.exit()
+    
