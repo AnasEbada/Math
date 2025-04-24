@@ -24,6 +24,8 @@ def take_input():
         if b1input.lower() == 'exit':
             print("Exiting program.")
             sys.exit()
+        if b1input.lower() == 'restart':
+            continue
         try:
             fb1 = float(b1input)
         except ValueError:
@@ -34,6 +36,8 @@ def take_input():
         if d1input.lower() == 'exit':
             print("Exiting program.")
             sys.exit()
+        if d1input.lower() == 'restart':
+            continue
         try:
             fd1 = float(d1input)
         except ValueError:
@@ -44,6 +48,8 @@ def take_input():
         if a2input.lower() == 'exit':
             print("Exiting program.")
             sys.exit()
+        if a2input.lower() == 'restart':
+            continue
         try:
             fa2 = float(a2input)
         except ValueError:
@@ -54,6 +60,8 @@ def take_input():
         if b2input.lower() == 'exit':
             print("Exiting program.")
             sys.exit()
+        if b2input.lower() == 'restart':
+            continue
         try:
             fb2 = float(b2input)
         except ValueError:
@@ -64,6 +72,8 @@ def take_input():
         if d2input.lower() == 'exit':
             print("Exiting program.")
             sys.exit()
+        if d2input.lower() == 'restart':
+            continue
         try:
             fd2 = float(d2input)
         except ValueError:
