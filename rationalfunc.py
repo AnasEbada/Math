@@ -1,9 +1,11 @@
+import re
+
 # code structure 
 # *  f(x) = (x2 + x - 2) / (2x2 - 2x - 3) 
 '''
 1. we take the values from the user as q(x) and p(x) #! getvalues()
 ** make sure that the values are valid #! getvalues()
-2. we split the terms over some list #! sfw()
+2. we split the terms over some list #! dicts()
 3. we already have dictionary that has up to 10 keys #! sfw()
 4. done, now we have dect for the n and the d, now we take the d and we get the zeros from it and done #! domain()
 ** we will do that for both n and d 
@@ -36,21 +38,16 @@ def getvalues():
             break
     return px, qx
 
-def sfw(px, qx):
-    p_terms = px.split('+')
-    q_terms = qx.split('+')
-    p_dict = {}
-    q_dict = {}
-    for term in p_terms:
-        if 'x' in term:
-            coeff, power = term.split('x')
-            p_dict[int(power)] = int(coeff)
-        else:
-            p_dict[0] = int(term)
-    for term in q_terms:
-        if 'x' in term:
-            coeff, power = term.split('x')
-            q_dict[int(power)] = int(coeff)
-        else:
-            q_dict[0] = int(term)
-    return p_dict, q_dict
+def sfw(px: str, qx: str):
+    # pointing pc and qx as strings so vscode is able to use #! replace()
+    px_nospaces = px.replace(" ", "")
+    pxlist = re.split(r"[+-]", px_nospaces)
+    qx_nospaces = qx.replace(" ", "")
+    qxlist = re.split(r"[+-]", qx_nospaces)
+    return pxlist, qxlist
+
+#todo THIS PROJECT WILL BE CONTINUED AFTER LEARNING SymPY
+            
+
+
+
