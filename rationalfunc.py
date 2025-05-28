@@ -46,7 +46,7 @@ def listterms(px: str, qx: str):
     qxlist = re.split(r"[+-]", qx_nospaces)
     return pxlist, qxlist
 
-
+#! SymPy
     
 
 
