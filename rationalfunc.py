@@ -12,7 +12,7 @@ import re
 and lastly the main script that the code and all functions will be called in and it will be #! mainscript()
 '''
 def getvalues():
-    validinputs = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'x', '+', '-']
+    validinputs = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'x', '+', '-', '^']
     while True:
         px = input('Please Enter P(x): ')
         ispxvalid = True
@@ -38,7 +38,7 @@ def getvalues():
             break
     return px, qx
 
-def sfw(px: str, qx: str):
+def listterms(px: str, qx: str):
     # pointing pc and qx as strings so vscode is able to use #! replace()
     px_nospaces = px.replace(" ", "")
     pxlist = re.split(r"[+-]", px_nospaces)
@@ -46,10 +46,10 @@ def sfw(px: str, qx: str):
     qxlist = re.split(r"[+-]", qx_nospaces)
     return pxlist, qxlist
 
-#todo THIS PROJECT WILL BE CONTINUED AFTER LEARNING SymPY
 
-print(sfw('x2 + x - 2', 'nigga'))
-            
+    
+
+
 
 
 
