@@ -47,6 +47,8 @@ def sfw(px: str, qx: str):
     return pxlist, qxlist
 
 #todo THIS PROJECT WILL BE CONTINUED AFTER LEARNING SymPY
+
+print(sfw('x2 + x - 2', 'nigga'))
             
 
 
