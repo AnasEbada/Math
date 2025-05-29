@@ -1,4 +1,3 @@
-import re
 
 # *  f(x) = (x2 + x - 2) / (2x2 - 2x - 3) 
 
@@ -40,6 +39,16 @@ def zeros(px: str, qx: str):
     return
 
 #TODO we are going to study this, but not now. pasued project.
+#TODO SymPy
+
+#* New Functions 
+#! any()
+#! split()
+# re library
+    #! re.split(r"[]", str)
+#! str.replace("new", "old")
+#? eval()
+
 
 
     
